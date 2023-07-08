@@ -16,6 +16,12 @@ function App() {
     setTodos(newTodos);
   };
 
+  const onClickDeleteButton = (index) => {
+    const newTodo = [...todos];
+    newTodo.splice(index, 1);
+    setTodos(newTodo);
+  };
+
   return (
     <>
       <div>
@@ -27,7 +33,14 @@ function App() {
       <div>
         <ul>
           {todos.map((todo, index) => {
-            return <li key={index}>{todo}</li>;
+            return (
+              <li key={index}>
+                {todo}
+                <button type='button' onClick={() => onClickDeleteButton(index)}>
+                  done
+                </button>
+              </li>
+            );
           })}
         </ul>
       </div>
