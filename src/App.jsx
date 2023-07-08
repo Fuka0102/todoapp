@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InputTodo } from './components/index';
+import { InputTodo, TodoList } from './components/index';
 import './App.css';
 
 function App() {
@@ -28,20 +28,7 @@ function App() {
   return (
     <>
       <InputTodo value={todoText} onChange={onChangeTodoText} onClick={onClickRegistButton} />
-      <div>
-        <ul>
-          {todos.map((todo, index) => {
-            return (
-              <li key={index}>
-                {todo}
-                <button type='button' onClick={() => onClickDeleteButton(index)}>
-                  done
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <TodoList target={todos} onClick={onClickDeleteButton} />
       <div>
         <button type='button' onClick={onClickAllDeleteButton} className={todos.length > 0 ? 'is-active' : ''}>
           Clear All
