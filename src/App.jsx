@@ -14,7 +14,6 @@ function App() {
   const onClickRegistButton = () => {
     const newTodos = [...todos, todoText];
     setTodos(newTodos);
-    alert(todos);
   };
 
   return (
@@ -24,6 +23,13 @@ function App() {
         <button type='button' onClick={onClickRegistButton}>
           Add
         </button>
+      </div>
+      <div>
+        <ul>
+          {todos.map((todo, index) => {
+            return <li key={index}>{todo}</li>;
+          })}
+        </ul>
       </div>
     </>
   );
