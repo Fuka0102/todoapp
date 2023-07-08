@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { InputTodo, TodoList } from './components/index';
+import { InputTodo, TodoList, AllClearButton } from './components/index';
 import './App.css';
 
 function App() {
@@ -29,11 +29,7 @@ function App() {
     <>
       <InputTodo value={todoText} onChange={onChangeTodoText} onClick={onClickRegistButton} />
       <TodoList target={todos} onClick={onClickDeleteButton} />
-      <div>
-        <button type='button' onClick={onClickAllDeleteButton} className={todos.length > 0 ? 'is-active' : ''}>
-          Clear All
-        </button>
-      </div>
+      <AllClearButton onClick={onClickAllDeleteButton} class={todos.length > 0 ? 'is-active' : ''} />
     </>
   );
 }
