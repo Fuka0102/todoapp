@@ -4,7 +4,16 @@ import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
-  return <></>;
+  const [todoText, setTodoText] = useState('');
+
+  return (
+    <>
+      <div>
+        <input type='text' value={todoText} />
+        <button type='button'>Add</button>
+      </div>
+    </>
+  );
 }
 
 export default App;
