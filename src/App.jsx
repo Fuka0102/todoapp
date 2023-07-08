@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
+  const [todos, setTodos] = useState([]);
   const [todoText, setTodoText] = useState('');
 
   const onChangeTodoText = (e) => {
@@ -11,7 +12,9 @@ function App() {
   };
 
   const onClickRegistButton = () => {
-    alert(todoText);
+    const newTodos = [...todos, todoText];
+    setTodos(newTodos);
+    alert(todos);
   };
 
   return (
