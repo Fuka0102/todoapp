@@ -6,10 +6,14 @@ import './App.css';
 function App() {
   const [todoText, setTodoText] = useState('');
 
+  const onChangeTodoText = (e) => {
+    setTodoText(e.target.value);
+  };
+
   return (
     <>
       <div>
-        <input type='text' value={todoText} />
+        <input type='text' value={todoText} onChange={onChangeTodoText} />
         <button type='button'>Add</button>
       </div>
     </>
