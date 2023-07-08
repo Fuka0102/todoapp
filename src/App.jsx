@@ -22,6 +22,10 @@ function App() {
     setTodos(newTodo);
   };
 
+  const onClickAllDeleteButton = () => {
+    setTodos([]);
+  };
+
   return (
     <>
       <div>
@@ -43,6 +47,11 @@ function App() {
             );
           })}
         </ul>
+      </div>
+      <div>
+        <button type='button' onClick={onClickAllDeleteButton} className={todos.length > 0 ? 'is-active' : ''}>
+          Clear All
+        </button>
       </div>
     </>
   );
