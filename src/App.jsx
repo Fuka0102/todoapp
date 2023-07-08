@@ -10,11 +10,17 @@ function App() {
     setTodoText(e.target.value);
   };
 
+  const onClickRegistButton = () => {
+    alert(todoText);
+  };
+
   return (
     <>
       <div>
         <input type='text' value={todoText} onChange={onChangeTodoText} />
-        <button type='button'>Add</button>
+        <button type='button' onClick={onClickRegistButton}>
+          Add
+        </button>
       </div>
     </>
   );
