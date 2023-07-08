@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { InputTodo } from './components/index';
 import './App.css';
 
 function App() {
@@ -28,12 +27,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <input type='text' value={todoText} onChange={onChangeTodoText} />
-        <button type='button' onClick={onClickRegistButton}>
-          Add
-        </button>
-      </div>
+      <InputTodo value={todoText} onChange={onChangeTodoText} onClick={onClickRegistButton} />
       <div>
         <ul>
           {todos.map((todo, index) => {
