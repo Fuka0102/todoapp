@@ -4,23 +4,28 @@ function TodoList(props) {
   const { target, onClick } = props;
   return (
     <>
-      <div>
-        <ul>
-          {target.map((item, index) => {
-            return (
-              <li key={index}>
-                {item}
-                <button type='button' onClick={onClick} className='is-visible'>
+      <ul className='todo_list'>
+        {target.map((item, index) => {
+          return (
+            <li key={index} className='todo_list-item'>
+              <span className='todo_list-text'>{item}</span>
+              <div className='todo_list-item_button_wrapper'>
+                <button
+                  type='button'
+                  onClick={onClick}
+                  className='todo_list-done_button is-visible'
+                  data-button-role='done'
+                >
                   done
                 </button>
-                <button type='button' onClick={onClick}>
+                <button type='button' onClick={onClick} className='todo_list-undo_button' data-button-role='undo'>
                   undo
                 </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }

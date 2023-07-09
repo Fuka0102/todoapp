@@ -25,3 +25,35 @@
   margin-left: 8px;
   width: 30%;
 }
+
+.todo_list-item {
+  display: flex;
+  align-items: center;
+}
+
+.todo_list-item.is-done .todo_list-text {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.todo_list-item + .todo_list-item {
+  margin-top: 16px;
+}
+
+.todo_list-item_button_wrapper {
+  margin-left: 8px;
+}
+
+.todo_list-done_button {
+  display: none;
+}
+.todo_list-done_button.is-visible {
+  display: block;
+}
+
+.todo_list-undo_button {
+  display: none;
+}
+.todo_list-undo_button.is-visible {
+  display: block;
+}

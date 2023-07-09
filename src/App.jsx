@@ -15,14 +15,15 @@ function App() {
     setTodos(newTodos);
   };
 
-  const onClickDoneButton = (e) => {
+  const onClickButton = (e) => {
     const target = e.currentTarget;
     const targetTodo = target.closest('li');
-    const targetUndoButton = target.nextElementSibling;
+    const targetButton =
+      target.getAttribute('data-button-role') === 'done' ? target.nextElementSibling : target.previousElementSibling;
 
     target.classList.toggle('is-visible');
     targetTodo.classList.toggle('is-done');
-    targetUndoButton.classList.toggle('is-visible');
+    targetButton.classList.toggle('is-visible');
   };
 
   const onClickAllDeleteButton = () => {
@@ -32,7 +33,7 @@ function App() {
   return (
     <div className='wrapper'>
       <InputTodo value={todoText} onChange={onChangeTodoText} onClick={onClickRegistButton} />
-      <TodoList target={todos} onClick={onClickDoneButton} />
+      <TodoList target={todos} onClick={onClickButton} />
       <AllClearButton onClick={onClickAllDeleteButton} class={todos.length > 0 ? 'is-active' : ''} />
     </div>
   );
