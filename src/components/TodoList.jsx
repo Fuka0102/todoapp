@@ -10,8 +10,11 @@ function TodoList(props) {
             return (
               <li key={index}>
                 {item}
-                <button type='button' onClick={() => onClick(index)}>
+                <button type='button' onClick={onClick} className='is-visible'>
                   done
+                </button>
+                <button type='button' onClick={onClick}>
+                  undo
                 </button>
               </li>
             );

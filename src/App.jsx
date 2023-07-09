@@ -15,10 +15,14 @@ function App() {
     setTodos(newTodos);
   };
 
-  const onClickDeleteButton = (index) => {
-    const newTodo = [...todos];
-    newTodo.splice(index, 1);
-    setTodos(newTodo);
+  const onClickDoneButton = (e) => {
+    const target = e.currentTarget;
+    const targetTodo = target.closest('li');
+    const targetUndoButton = target.nextElementSibling;
+
+    target.classList.toggle('is-visible');
+    targetTodo.classList.toggle('is-done');
+    targetUndoButton.classList.toggle('is-visible');
   };
 
   const onClickAllDeleteButton = () => {
@@ -28,7 +32,7 @@ function App() {
   return (
     <>
       <InputTodo value={todoText} onChange={onChangeTodoText} onClick={onClickRegistButton} />
-      <TodoList target={todos} onClick={onClickDeleteButton} />
+      <TodoList target={todos} onClick={onClickDoneButton} />
       <AllClearButton onClick={onClickAllDeleteButton} class={todos.length > 0 ? 'is-active' : ''} />
     </>
   );
