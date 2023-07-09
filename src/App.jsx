@@ -30,11 +30,11 @@ function App() {
   };
 
   return (
-    <>
+    <div className='wrapper'>
       <InputTodo value={todoText} onChange={onChangeTodoText} onClick={onClickRegistButton} />
       <TodoList target={todos} onClick={onClickDoneButton} />
       <AllClearButton onClick={onClickAllDeleteButton} class={todos.length > 0 ? 'is-active' : ''} />
-    </>
+    </div>
   );
 }
 
