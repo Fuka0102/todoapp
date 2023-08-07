@@ -1,0 +1,67 @@
+.wrapper {
+  width: 750px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  color: #111;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.todo_input {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.todo_input-form {
+  background: #fff;
+  height: 100%;
+  width: 80%;
+  color: #111;
+}
+
+.todo_input-button {
+  margin-left: 8px;
+  width: 30%;
+}
+
+.todo_list {
+  padding: 10px;
+}
+
+.todo_list-item {
+  display: flex;
+  align-items: center;
+}
+
+.todo_list-item.is-done .todo_list-text {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.todo_list-item + .todo_list-item {
+  margin-top: 16px;
+}
+
+.todo_list-item_button_wrapper {
+  margin-left: 8px;
+}
+
+.todo_list-done_button {
+  display: none;
+}
+.todo_list-done_button.is-visible {
+  display: block;
+}
+
+.todo_list-undo_button {
+  display: none;
+}
+.todo_list-undo_button.is-visible {
+  display: block;
+}

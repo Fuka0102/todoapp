@@ -5,9 +5,9 @@ function InputTodo(props) {
 
   return (
     <>
-      <div>
-        <input type='text' value={value} onChange={onChange} />
-        <button type='button' onClick={onClick}>
+      <div className='todo_input'>
+        <input type='text' value={value} onChange={onChange} className='todo_input-form' />
+        <button type='button' onClick={onClick} className='todo_input-button'>
           Add
         </button>
       </div>
